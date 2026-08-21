@@ -48,7 +48,7 @@
 		
 		<meta name="msapplication-TileColor" content="#da532c" />
 		<meta name="theme-color" content="#0f131d" />
-		<link rel="stylesheet" href="./main.css?ver=4041" />
+		<link rel="stylesheet" href="./main.css?ver=4042" />
 		<script type="text/javascript" crossorigin="anonymous" src="./thirdparty/adapter.js"></script>
 		
 		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
@@ -81,7 +81,7 @@
 		<link rel="stylesheet" href="auth-styles.css">
 
 	</head>
-	<body id="main" class="main hidden" onload="main()">
+	<body id="main" class="main hidden landing-refresh" onload="main()">
 		<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
 			<link itemprop="url" href="./media/vdoNinja_logo_full.png" />
 		</span>
@@ -366,11 +366,42 @@
 			</span>
 		</span>
 		<div id="mainmenu" class="row" style="opacity: 0;">
+			<section class="landing-intro columnfade" aria-labelledby="landing-title">
+				<div class="landing-intro-copy">
+					<div class="landing-eyebrow"><span class="landing-live-dot" aria-hidden="true"></span> Browser-based live production</div>
+					<h1 id="landing-title">Remote video,<br /><span>ready for production.</span></h1>
+					<p>Bring cameras, screens, and guests directly into OBS—without downloads, accounts, or complicated setup.</p>
+					<div class="landing-trust" aria-label="Product benefits">
+						<span><i class="las la-bolt" aria-hidden="true"></i> Ultra-low latency</span>
+						<span><i class="las la-lock" aria-hidden="true"></i> Peer-to-peer privacy</span>
+						<span><i class="las la-check-circle" aria-hidden="true"></i> Free to use</span>
+					</div>
+				</div>
+				<div class="landing-signal" aria-hidden="true">
+					<div class="landing-signal-orbit orbit-one"><span></span></div>
+					<div class="landing-signal-orbit orbit-two"><span></span></div>
+					<div class="landing-signal-core"><i class="las la-video"></i></div>
+					<div class="landing-signal-label"><span></span> Ready to connect</div>
+				</div>
+			</section>
+			<div class="landing-section-heading columnfade">
+				<div>
+					<span>Choose a workflow</span>
+					<h2>What would you like to do?</h2>
+				</div>
+				<p>Every option opens a guided setup.</p>
+			</div>
+			<div class="landing-actions" aria-label="Start with VDO.Ninja">
 			<div id="container-1" title="Add Group Chat to OBS"  alt="Add Group Chat to OBS" tabindex="1" role="button" aria-pressed="false" onkeyup="enterPressedClick(event,this);" class="column columnfade pointer card" style=" overflow-y: auto;">
 				
 					<h2>
 						<span data-translate="add-group-chat">Create a Room</span>
 					</h2>
+					<div class="landing-card-summary">
+						<div class="landing-card-icon"><i class="las la-users" aria-hidden="true"></i></div>
+						<p>Host multiple guests with a dedicated control room.</p>
+						<span class="landing-card-link">Start a room <i class="las la-arrow-right" aria-hidden="true"></i></span>
+					</div>
 					<div class="container-inner">
 						<br />
 						<br />
@@ -535,6 +566,11 @@
 				<h2 id="add_camera">
 					<span data-translate="add-your-camera">Add your Camera to OBS</span>
 				</h2>
+				<div class="landing-card-summary">
+					<div class="landing-card-icon"><i class="las la-video" aria-hidden="true"></i></div>
+					<p>Turn this device into a clean, high-quality video source.</p>
+					<span class="landing-card-link">Add a camera <i class="las la-arrow-right" aria-hidden="true"></i></span>
+				</div>
 				<div class="container-inner" id="add_camera_inner">
 					<br />
 					<p>
@@ -776,6 +812,11 @@
 				<h2 id="add_screen">
 					<span data-translate="remote-screenshare-obs">Remote Screenshare into OBS</span>
 				</h2>
+				<div class="landing-card-summary">
+					<div class="landing-card-icon"><i class="las la-desktop" aria-hidden="true"></i></div>
+					<p>Share a display or application from any remote browser.</p>
+					<span class="landing-card-link">Share a screen <i class="las la-arrow-right" aria-hidden="true"></i></span>
+				</div>
 				<div class="container-inner">
 					<div class="screenshare-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
@@ -875,6 +916,11 @@
 				<h2>
 					<span data-translate="create-reusable-invite">Create Reusable Invite</span>
 				</h2>
+				<div class="landing-card-summary">
+					<div class="landing-card-icon"><i class="las la-paper-plane" aria-hidden="true"></i></div>
+					<p>Generate a link you can keep and use again anytime.</p>
+					<span class="landing-card-link">Create an invite <i class="las la-arrow-right" aria-hidden="true"></i></span>
+				</div>
 				<div id="gencontent2" style="display:none; max-height: 100%;min-height: 90%;"></div>
 				<div id="gencontent" class="container-inner">
 					
@@ -996,6 +1042,7 @@
 						</label>
 					</div>
 				</div>
+			</div>
 			</div>
 			
 			<div id="dropButton" onclick="dropDownButtonAction()" title="More Options" aria-hidden="true"><i class="las la-chevron-down" ></i></div>
