@@ -8742,6 +8742,11 @@ video.viewchroma-source-hidden {
 	--card-glow: rgba(243, 169, 83, 0.5);
 }
 
+.landing-refresh #container-3a {
+	--card-accent: #ef6fa8;
+	--card-glow: rgba(239, 111, 168, 0.52);
+}
+
 .landing-refresh #mainmenu .landing-actions > .column:hover {
 	border-color: color-mix(in srgb, var(--card-accent) 48%, transparent);
 	box-shadow: 0 18px 38px rgba(16, 24, 40, 0.14);
