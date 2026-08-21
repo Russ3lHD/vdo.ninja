@@ -8689,7 +8689,8 @@ video.viewchroma-source-hidden {
 .landing-refresh #mainmenu .landing-actions > #empty-container {
 	width: auto;
 	min-width: 0;
-	height: 220px;
+	min-height: 220px;
+	height: auto;
 	margin: 0;
 	padding: 22px !important;
 	overflow: hidden !important;
@@ -8765,7 +8766,8 @@ video.viewchroma-source-hidden {
 	grid-template-columns: 50px minmax(0, 1fr);
 	grid-template-rows: 1fr auto;
 	column-gap: 15px;
-	height: 146px;
+	min-height: 146px;
+	height: auto;
 	min-width: 0;
 	padding-top: 18px;
 }
@@ -8932,6 +8934,64 @@ video.viewchroma-source-hidden {
 	color: var(--landing-muted);
 }
 
+/* Secondary "More Options" cards — reuse the redesigned card language so the
+   fold-out list doesn't look like a leftover from the old design. Scoped with
+   the > combinator so it only ever touches the direct #mainmenu children
+   (container-5 and up), never the primary four inside .landing-actions. */
+.landing-refresh #mainmenu > .column.card {
+	background: var(--landing-surface) !important;
+	border: 1px solid var(--landing-line);
+	border-radius: 18px;
+	box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+	transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.darktheme.landing-refresh #mainmenu > .column.card {
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.landing-refresh #mainmenu > .column.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 17px;
+	width: 40px;
+	height: 3px;
+	background: var(--landing-accent);
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 0 18px rgba(124, 108, 255, 0.5);
+}
+
+.landing-refresh #mainmenu > .column.card:hover {
+	border-color: color-mix(in srgb, var(--landing-accent) 40%, transparent);
+	box-shadow: 0 18px 38px rgba(16, 24, 40, 0.14);
+}
+
+.darktheme.landing-refresh #mainmenu > .column.card:hover {
+	box-shadow: 0 22px 44px rgba(0, 0, 0, 0.36), 0 0 0 1px color-mix(in srgb, var(--landing-accent) 20%, transparent);
+}
+
+.landing-refresh #mainmenu > .column.card > h2 {
+	margin: 0 0 4px;
+	color: var(--landing-ink);
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.landing-refresh #mainmenu > .column.card > .largeDarkIcon {
+	display: grid !important;
+	place-items: center;
+	width: 46px !important;
+	height: 46px !important;
+	margin: 14px auto 0 !important;
+	font-size: 20px !important;
+	color: var(--landing-accent) !important;
+	background: color-mix(in srgb, var(--landing-accent) 12%, transparent);
+	border: 1px solid color-mix(in srgb, var(--landing-accent) 24%, transparent);
+	border-radius: 12px;
+}
+
 @media (max-width: 1050px) {
 	.landing-actions {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9016,7 +9076,8 @@ video.viewchroma-source-hidden {
 	.landing-refresh #mainmenu .landing-actions > #empty-container {
 		width: 100%;
 		max-width: 100%;
-		height: 205px;
+		min-height: 205px;
+		height: auto;
 	}
 
 	.landing-trust {
