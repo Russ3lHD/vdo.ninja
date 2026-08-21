@@ -8825,9 +8825,14 @@ video.viewchroma-source-hidden {
 	width: 100%;
 	height: 100%;
 	padding: 25px 17px !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
 	border: 0;
 	border-radius: 0;
 	transform: none;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior-y: contain;
+	touch-action: pan-y;
 }
 
 .landing-refresh #mainmenu .landing-actions > .in-animation::before,
@@ -9005,7 +9010,7 @@ video.viewchroma-source-hidden {
 		grid-template-columns: 1fr;
 	}
 
-	.landing-refresh #mainmenu .landing-actions > .column,
+	.landing-refresh #mainmenu .landing-actions > .column:not(.in-animation):not(.skip-animation),
 	.landing-refresh #mainmenu .landing-actions > #empty-container {
 		width: 100%;
 		max-width: 100%;
